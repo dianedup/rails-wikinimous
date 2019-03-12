@@ -13,11 +13,13 @@ Article.destroy_all
 puts 'Creating articles with faker...'
 10.times do
   article = Article.new(
-    title: Faker::Lorem.paragraph(2, false, 4),
-    content: Faker::GreekPhilosophers.quote,
+    title: Faker::GreekPhilosophers.quote,
+    content: Faker::Lorem.paragraphs(4).join("\n"),
   )
   article.save!
 end
 
 
 puts "Finished!"
+
+    # content: Faker::Lorem.paragraph,
